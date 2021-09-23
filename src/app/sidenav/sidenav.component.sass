@@ -2,54 +2,30 @@
 @import '../../styles.sass'
 
 .nav-container
-    background-color: $bg2
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    height:100vh
-    width: 15%
+    @apply flex flex-col justify-between bg-gray-50 h-screen w-1/6
 
 .menu-item
-    cursor: pointer
-    display: flex
-    width: 100%
-    padding: $spacing3
-    color: $font-color1
-   
-
-    
+    @apply flex w-full p-6 cursor-pointer text-gray-500 hover:text-indigo-500 
     .item-name
-        @extend .typography-1 
-        
+        @extend .typography-1     
 
-    
     mat-icon
         margin-inline-end: $spacing2
 
-    &:hover
-        color: $font-color-highlight
-        .item-name
-            color: $font-color-highlight
-    
 .profile
-    display: flex
-    padding: $spacing1 +4 
-    border-top: 1px solid $bg3
+    @apply flex p-6 border-t border-gray-300 text-gray-500
 
 
     .profile-picture
+        @apply bg-gray-200 p-4 rounded-full 
         margin-inline-end: $spacing1
-        background-color: $bg3
-        border-radius: 50%
-        padding: $spacing1 + 5
 
     .profile-name
         @extend .typography-1 
-        font-weight: 500
-
+        @apply font-medium	
     .profile-role
         @extend .typography-1 
-        opacity: 50%
+        @apply opacity-50	
 
     .profile-picture
         @extend .typography-1
