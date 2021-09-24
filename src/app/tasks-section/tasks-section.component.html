@@ -7,8 +7,8 @@
         <button
           class="
             my-4
-            bg-indigo-500
-            hover:bg-indigo-700
+            bg-orange-500
+            hover:bg-orange-600
             text-white
             font-bold
             py-2
@@ -23,6 +23,7 @@
       <div *ngFor="let task of section.tasks">
         <div *ngIf="task.showTask" class="flex justify-between">
           <mat-checkbox
+            color="primary"
             class="overflow-scroll sm:overflow-hidden"
             [(checked)]="task.isDone"
           >

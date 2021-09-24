@@ -2,19 +2,22 @@
 @import '../../styles.sass'
 
 .nav-container
-    @apply flex flex-col justify-between bg-gray-50  border-r-2  w-max  border-gray-300 z-10 shadow-sm
+    @apply flex flex-col justify-between bg-gray-50  border-r-2  w-max  border-gray-100 z-10 shadow-sm
 
 
 .menu-item
-    @apply flex w-full p-6 cursor-pointer text-gray-500 hover:text-indigo-500 
+    @apply flex w-full p-6 cursor-pointer text-gray-500 hover:text-orange-600 
     .item-name
         @extend .typography-1     
 
     mat-icon
         margin-inline-end: $spacing2
+    &:first-child
+        @apply text-orange-600
+
 
 .profile
-    @apply flex p-6 border-t border-gray-300 text-gray-500
+    @apply flex p-6 border-t border-gray-200 text-gray-500
 
 
     .profile-picture
