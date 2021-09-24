@@ -2,7 +2,7 @@
 @import '../../styles.sass'
 
 .nav-container
-    @apply flex flex-col justify-between bg-gray-50  border-r-2    border-gray-300
+    @apply flex flex-col justify-between bg-gray-50  border-r-2  w-max  border-gray-300
 
 
 .menu-item
@@ -18,8 +18,9 @@
 
 
     .profile-picture
-        @apply bg-gray-200 p-4 rounded-full 
+        @apply bg-gray-200 p-4 w-14 h-14 text-center
         margin-inline-end: $spacing1
+        border-radius: 50%
 
     .profile-name
         @extend .typography-1 
