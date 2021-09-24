@@ -1,8 +1,25 @@
 <div class="m-8 mt-6">
   <div class="mb-3">{{ section.name | titlecase }} :</div>
-
   <div class="w-full">
     <div class="flex flex-col rounded-md border-2 border-gray-200 p-4">
+      <div class="flex flex-col items-center" *ngIf="section.tasks.length == 0">
+        <div>Nothing yet :(</div>
+        <button
+          class="
+            my-4
+            bg-indigo-500
+            hover:bg-indigo-700
+            text-white
+            font-bold
+            py-2
+            px-4
+            rounded
+            mr-5
+          "
+        >
+          Add your first task
+        </button>
+      </div>
       <div *ngFor="let task of section.tasks" class="flex justify-between">
         <mat-checkbox [(checked)]="task.isDone"> {{ task.text }} </mat-checkbox>
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
@@ -23,6 +40,5 @@
         </mat-menu>
       </div>
     </div>
-    <div></div>
   </div>
 </div>

@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponentComponent implements OnInit {
   showSideNav = true;
   tasksSections: TaskSection[];
+  searchResults: TaskSection[];
+
   constructor() {}
 
   ngOnInit(): void {
@@ -53,6 +55,7 @@ export class MainComponentComponent implements OnInit {
           },
         ],
       },
+      { id: 's-001', name: 'Extra', showSection: true, tasks: [] },
     ];
   }
 
