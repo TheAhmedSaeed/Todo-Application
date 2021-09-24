@@ -22,7 +22,10 @@
       </div>
       <div *ngFor="let task of section.tasks">
         <div *ngIf="task.showTask" class="flex justify-between">
-          <mat-checkbox class="overflow-scroll" [(checked)]="task.isDone">
+          <mat-checkbox
+            class="overflow-scroll sm:overflow-hidden"
+            [(checked)]="task.isDone"
+          >
             {{ task.text }}
           </mat-checkbox>
           <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
