@@ -10,6 +10,25 @@
     <img class="my-logo -translate-y-0.5" src="../assets/Logo.svg" />
 
     <div class="search-container">
+      <button
+        class="
+          my-4
+          bg-orange-500
+          hover:bg-orange-600
+          text-white
+          font-bold
+          py-2
+          px-4
+          rounded
+          mr-5
+        "
+      >
+        New Section
+      </button>
+
+      <div
+        class="inline-block border-r-4 border-gray-100 mx-5 h-10 translate-y-5"
+      ></div>
       <input
         [(ngModel)]="searchTerm"
         (keyup)="searchForTask()"
