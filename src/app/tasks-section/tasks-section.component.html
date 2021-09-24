@@ -1,10 +1,10 @@
 <div class="m-8 mt-6">
-  <div class="mb-3">Design:</div>
+  <div class="mb-3">{{ section.name | titlecase }} :</div>
 
   <div class="w-full">
     <div class="flex flex-col rounded-md border-2 border-gray-200 p-4">
-      <div class="flex justify-between">
-        <mat-checkbox> First task goes here </mat-checkbox>
+      <div *ngFor="let task of section.tasks" class="flex justify-between">
+        <mat-checkbox [(checked)]="task.isDone"> {{ task.text }} </mat-checkbox>
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
           <mat-icon class="text-gray-400 hover:text-gray-600"
             >more_horiz</mat-icon

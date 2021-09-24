@@ -2,11 +2,11 @@ export interface Task {
   id: string;
   text: string;
   isDone: boolean;
-  order: number;
 }
 
 export interface TaskSection {
+  id: string;
   name: string;
-  tasks: string[];
+  tasks: Task[];
   showSection: boolean;
 }

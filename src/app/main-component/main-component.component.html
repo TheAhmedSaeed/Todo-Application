@@ -4,6 +4,7 @@
       class="cursor-pointer"
       aria-hidden="false"
       aria-label="Example home icon"
+      (click)="toggleSideNav()"
       >menu</mat-icon
     >
     <img class="ml-5 -translate-y-0.5" src="../assets/Logo.svg" />
@@ -41,14 +42,13 @@
   </div>
 
   <div class="flex h-full overflow-hidden">
-    <app-sidenav></app-sidenav>
+    <app-sidenav [toggled]="showSideNav"></app-sidenav>
 
     <div class="w-full h-full overflow-y-scroll">
-      <app-tasks-section></app-tasks-section>
-      <app-tasks-section></app-tasks-section>
-      <app-tasks-section></app-tasks-section>
-      <app-tasks-section></app-tasks-section>
-      <app-tasks-section></app-tasks-section>
+      <app-tasks-section
+        *ngFor="let section of tasksSections"
+        [section]="section"
+      ></app-tasks-section>
     </div>
   </div>
 </div>
