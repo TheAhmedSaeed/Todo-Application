@@ -11,6 +11,8 @@
 
     <div class="ml-auto">
       <input
+        [(ngModel)]="searchTerm"
+        (keyup)="searchForTask()"
         class="
           border-gray-200
           rounded
@@ -30,10 +32,15 @@
     <app-sidenav [toggled]="showSideNav"></app-sidenav>
 
     <div class="w-full h-full overflow-y-scroll">
-      <app-tasks-section
-        *ngFor="let section of tasksSections"
-        [section]="section"
-      ></app-tasks-section>
+      <div *ngIf="noMatches" class="text-gray-600 text-center mt-6 text-lg">
+        Sorry, no matches
+      </div>
+      <div *ngFor="let section of tasksSections">
+        <app-tasks-section
+          *ngIf="section.showSection"
+          [section]="section"
+        ></app-tasks-section>
+      </div>
     </div>
   </div>
 </div>

@@ -9,6 +9,7 @@ import { TasksSectionComponent } from './tasks-section/tasks-section.component';
 import { MainComponentComponent } from './main-component/main-component.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MatMenuModule } from '@angular/material/menu';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatIconModule,
     MatCheckboxModule,
     MatMenuModule,
