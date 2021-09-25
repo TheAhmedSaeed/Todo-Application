@@ -1,12 +1,20 @@
+import { AddDialogComponent } from './../add-dialog/add-dialog.component';
 import { TaskSection } from './../../models/tasks.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Subscription } from 'rxjs';
+import { messageOnClosingDialgos } from 'src/utils/util';
+
+export interface DialogData {
+  name: string;
+}
 
 @Component({
   selector: 'app-main-component',
   templateUrl: './main-component.component.html',
   styleUrls: ['./main-component.component.sass'],
 })
-export class MainComponentComponent implements OnInit {
+export class MainComponentComponent implements OnInit, OnDestroy {
   showSideNav = true;
   tasksSections: TaskSection[];
 
@@ -15,7 +23,12 @@ export class MainComponentComponent implements OnInit {
   isSearchActive: boolean = false;
   noMatches: boolean = false;
 
-  constructor() {}
+  subscribtions: Subscription[] = [];
+
+  constructor(public dialog: MatDialog) {}
+  ngOnDestroy(): void {
+    this.subscribtions.forEach((sub) => sub.unsubscribe());
+  }
 
   ngOnInit(): void {
     this.tasksSections = [
@@ -104,5 +117,26 @@ export class MainComponentComponent implements OnInit {
   }
   toggleSideNav() {
     this.showSideNav = !this.showSideNav;
+  }
+
+  addNewSection() {
+    const dialogRef = this.dialog.open(AddDialogComponent, {
+      data: { name: 'New Section', value: '' },
+    });
+
+    this.subscribtions.push(
+      dialogRef.afterClosed().subscribe((result) => {
+        if (result == messageOnClosingDialgos) return;
+
+        //random id
+        let id = (Math.random() + 1).toString(36).substring(7);
+        this.tasksSections.unshift({
+          id: id,
+          name: result,
+          showSection: true,
+          tasks: [],
+        });
+      })
+    );
   }
 }

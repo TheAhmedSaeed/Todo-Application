@@ -9,7 +9,11 @@ import { TasksSectionComponent } from './tasks-section/tasks-section.component';
 import { MainComponentComponent } from './main-component/main-component.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
+import { AddDialogComponent } from './add-dialog/add-dialog.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     SidenavComponent,
     TasksSectionComponent,
     MainComponentComponent,
+    AddDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,11 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatCheckboxModule,
     MatMenuModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
+  entryComponents: [AddDialogComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
