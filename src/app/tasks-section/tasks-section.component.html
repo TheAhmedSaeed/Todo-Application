@@ -18,8 +18,9 @@
           <mat-checkbox
             color="accent"
             class="overflow-scroll sm:overflow-hidden ct-text-color-1"
-            [(checked)]="task.isDone"
+            [checked]="task.isDone"
             [class.line-through]="task.isDone"
+            (change)="task.isDone = !task.isDone"
           >
             {{ task.text }}
           </mat-checkbox>

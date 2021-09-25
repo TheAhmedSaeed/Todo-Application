@@ -1,3 +1,4 @@
+import { LangService } from './../services/lang.service';
 import { AddDialogComponent } from './../add-dialog/add-dialog.component';
 import { TaskSection } from './../../models/tasks.model';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -25,7 +26,7 @@ export class MainComponentComponent implements OnInit, OnDestroy {
 
   subscribtions: Subscription[] = [];
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private langService: LangService) {}
   ngOnDestroy(): void {
     this.subscribtions.forEach((sub) => sub.unsubscribe());
   }
@@ -46,7 +47,7 @@ export class MainComponentComponent implements OnInit, OnDestroy {
           {
             id: 't-002',
             text: 'Convert the design to HTML + CSS',
-            isDone: false,
+            isDone: true,
             showTask: true,
           },
           {
@@ -138,5 +139,8 @@ export class MainComponentComponent implements OnInit, OnDestroy {
         });
       })
     );
+  }
+  changeLanguage() {
+    this.langService.switchLang();
   }
 }

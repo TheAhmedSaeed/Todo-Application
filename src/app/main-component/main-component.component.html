@@ -7,7 +7,11 @@
       (click)="toggleSideNav()"
       >menu</mat-icon
     >
-    <img class="my-logo -translate-y-0.5" src="../assets/Logo.svg" />
+    <img
+      (click)="changeLanguage()"
+      class="my-logo -translate-y-0.5"
+      src="../assets/Logo.svg"
+    />
 
     <div class="search-container">
       <button (click)="addNewSection()" class="ct-button">Add Section</button>
