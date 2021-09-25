@@ -126,7 +126,7 @@ export class MainComponentComponent implements OnInit, OnDestroy {
 
     this.subscribtions.push(
       dialogRef.afterClosed().subscribe((result) => {
-        if (result == messageOnClosingDialgos) return;
+        if (!result || result == messageOnClosingDialgos) return;
 
         //random id
         let id = (Math.random() + 1).toString(36).substring(7);

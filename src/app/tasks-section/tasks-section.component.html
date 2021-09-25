@@ -23,7 +23,7 @@
       <div *ngFor="let task of section.tasks">
         <div *ngIf="task.showTask" class="flex justify-between">
           <mat-checkbox
-            color="primary"
+            color="accent"
             class="overflow-scroll sm:overflow-hidden"
             [(checked)]="task.isDone"
             [class.line-through]="task.isDone"
