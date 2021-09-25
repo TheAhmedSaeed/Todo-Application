@@ -20,7 +20,7 @@ export class TasksSectionComponent implements OnInit {
 
   addNewTask() {
     const dialogRef = this.dialog.open(AddDialogComponent, {
-      data: { name: 'New Task', value: '' },
+      data: { name: 'new task', value: '' },
     });
 
     this.subscriptions.push(

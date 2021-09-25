@@ -121,7 +121,7 @@ export class MainComponentComponent implements OnInit, OnDestroy {
 
   addNewSection() {
     const dialogRef = this.dialog.open(AddDialogComponent, {
-      data: { name: 'New Section', value: '' },
+      data: { name: 'new section', value: '' },
     });
 
     this.subscribtions.push(

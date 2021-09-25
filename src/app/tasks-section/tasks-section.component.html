@@ -2,31 +2,14 @@
   <div class="mb-3 flex justify-between">
     <div>{{ section.name | titlecase }} :</div>
     <div class="opacity-0 group-hover:opacity-100">
-      <mat-icon
-        (click)="addNewTask()"
-        class="text-gray-400 hover:text-gray-600 cursor-pointer"
-        >add</mat-icon
-      >
+      <mat-icon (click)="addNewTask()" class="ct-icon">add</mat-icon>
     </div>
   </div>
   <div class="w-full">
     <div class="flex flex-col rounded-md border-2 border-gray-200 p-4">
       <div *ngIf="section.tasks.length == 0" class="flex flex-col items-center">
         <div>Nothing yet :)</div>
-        <button
-          class="
-            my-4
-            bg-orange-500
-            hover:bg-orange-600
-            text-white
-            font-bold
-            py-2
-            px-4
-            rounded
-            mr-5
-          "
-          (click)="addNewTask()"
-        >
+        <button class="ct-button my-4" (click)="addNewTask()">
           Add your first task
         </button>
       </div>
@@ -34,16 +17,14 @@
         <div *ngIf="task.showTask" class="flex justify-between">
           <mat-checkbox
             color="accent"
-            class="overflow-scroll sm:overflow-hidden"
+            class="overflow-scroll sm:overflow-hidden text-gray-400"
             [(checked)]="task.isDone"
             [class.line-through]="task.isDone"
           >
             {{ task.text }}
           </mat-checkbox>
           <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
-            <mat-icon class="text-gray-400 hover:text-gray-600"
-              >more_horiz</mat-icon
-            >
+            <mat-icon class="ct-icon">more_horiz</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
             <button mat-menu-item>
