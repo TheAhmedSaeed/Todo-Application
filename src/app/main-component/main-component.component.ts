@@ -16,7 +16,7 @@ export interface DialogData {
 })
 export class MainComponentComponent implements OnInit, OnDestroy {
   showSideNav = true;
-  tasksSections: TaskSection[];
+  tasksSections: TaskSection[] = [];
 
   searchResults: TaskSection[];
   searchTerm: string = '';
