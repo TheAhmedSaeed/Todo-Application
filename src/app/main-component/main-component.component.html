@@ -10,12 +10,10 @@
     <img class="my-logo -translate-y-0.5" src="../assets/Logo.svg" />
 
     <div class="search-container">
-      <button (click)="addNewSection()" class="my-4 ct-button">
-        Add Section
-      </button>
+      <button (click)="addNewSection()" class="ct-button">Add Section</button>
 
       <div
-        class="inline-block border-r-4 border-gray-100 mx-5 h-10 translate-y-5"
+        class="inline-block border-r-2 border-gray-100 mx-5 h-10 translate-y-5"
       ></div>
       <input
         [(ngModel)]="searchTerm"
@@ -36,12 +34,16 @@
   </div>
 
   <div class="flex h-full overflow-hidden">
-    <app-sidenav [toggled]="showSideNav"></app-sidenav>
+    <app-sidenav
+      *ngIf="showSideNav"
+      class="w-2/12"
+      [toggled]="showSideNav"
+    ></app-sidenav>
 
     <div class="w-full h-full overflow-y-scroll">
       <div
         *ngIf="noMatches && tasksSections.length > 0"
-        class="text-gray-500 text-center mt-10 text-lg"
+        class="ct-text-color-1 text-center mt-10"
       >
         Sorry, no matches
       </div>

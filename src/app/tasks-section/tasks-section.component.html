@@ -8,7 +8,7 @@
   <div class="w-full">
     <div class="flex flex-col rounded-md border-2 border-gray-200 p-4">
       <div *ngIf="section.tasks.length == 0" class="flex flex-col items-center">
-        <div>Nothing yet :)</div>
+        <div class="ct-text-color-1">Nothing yet :)</div>
         <button class="ct-button my-4" (click)="addNewTask()">
           Add your first task
         </button>
@@ -17,7 +17,7 @@
         <div *ngIf="task.showTask" class="flex justify-between">
           <mat-checkbox
             color="accent"
-            class="overflow-scroll sm:overflow-hidden text-gray-400"
+            class="overflow-scroll sm:overflow-hidden ct-text-color-1"
             [(checked)]="task.isDone"
             [class.line-through]="task.isDone"
           >

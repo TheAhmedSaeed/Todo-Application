@@ -11,7 +11,11 @@ module.exports = {
   },
   darkMode: "class", // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        "1px": "1px",
+      },
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -22,6 +26,12 @@ module.exports = {
       red: colors.rose,
       yellow: colors.amber,
       orange: colors.orange,
+      tamgray: {
+        DEFAULT: "#fbfbfb",
+      },
+      tamorange: {
+        DEFAULT: "#E9471C",
+      },
     },
   },
   variants: {
