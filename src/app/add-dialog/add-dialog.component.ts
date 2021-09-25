@@ -18,11 +18,13 @@ export class AddDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<AddDialogComponent>
   ) {}
 
-  ngOnInit(): void {
-    this;
-  }
+  ngOnInit(): void {}
 
   onNoClick() {
     this.dialogRef.close(messageOnClosingDialgos);
+  }
+
+  onEnterClicked() {
+    this.dialogRef.close(this.data.value);
   }
 }

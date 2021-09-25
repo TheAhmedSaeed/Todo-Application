@@ -1,8 +1,17 @@
-<div class="m-8 mt-6">
-  <div class="mb-3">{{ section.name | titlecase }} :</div>
+<div class="group m-8 mt-6">
+  <div class="mb-3 flex justify-between">
+    <div>{{ section.name | titlecase }} :</div>
+    <div class="opacity-0 group-hover:opacity-100">
+      <mat-icon
+        (click)="addNewTask()"
+        class="text-gray-400 hover:text-gray-600 cursor-pointer"
+        >add</mat-icon
+      >
+    </div>
+  </div>
   <div class="w-full">
     <div class="flex flex-col rounded-md border-2 border-gray-200 p-4">
-      <div class="flex flex-col items-center" *ngIf="section.tasks.length == 0">
+      <div *ngIf="section.tasks.length == 0" class="flex flex-col items-center">
         <div>Nothing yet :)</div>
         <button
           class="
@@ -16,6 +25,7 @@
             rounded
             mr-5
           "
+          (click)="addNewTask()"
         >
           Add your first task
         </button>
