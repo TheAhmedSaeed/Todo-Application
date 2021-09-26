@@ -17,7 +17,14 @@
       <button (click)="addNewSection()" class="ct-button">Add Section</button>
 
       <div
-        class="inline-block border-r-2 border-gray-100 mx-5 h-10 translate-y-5"
+        class="
+          hidden
+          md:inline-block
+          border-r-2 border-gray-100
+          mx-5
+          h-10
+          translate-y-5
+        "
       ></div>
       <input
         [(ngModel)]="searchTerm"
@@ -27,7 +34,8 @@
           rounded
           border-2
           p-2
-          w-60
+          w-28
+          md:w-60
           hover:border-orange-400
           focus:border-orange-500 focus:outline-none
         "
@@ -40,7 +48,7 @@
   <div class="flex h-full overflow-hidden">
     <app-sidenav
       *ngIf="showSideNav"
-      class="w-2/12"
+      class="w-40 md:w-2/12"
       [toggled]="showSideNav"
     ></app-sidenav>
 
